@@ -15,6 +15,7 @@ variables:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
-- script: dotnet build --configuration $(buildconfiguration)
-  displayName: 'Build Pipeline'
+  
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
